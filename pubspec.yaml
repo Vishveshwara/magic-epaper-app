@@ -23,6 +23,9 @@ dependencies:
   flutter_svg_provider: ^1.0.7
   matrix2d: ^1.0.4
   image: ^4.3.0
+  flutter_screenutil: ^5.9.3
+  google_fonts: ^6.2.1
+  image_picker: ^1.1.2
 
 
 dev_dependencies:
