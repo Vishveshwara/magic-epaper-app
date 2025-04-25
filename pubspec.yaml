@@ -2,13 +2,13 @@ name: magic_epaper_app
 description: "A new Flutter project."
 
 # Prevent accidental publishing to pub.dev.
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
-  flutter: '3.29.2'
+  sdk: ">=3.3.4 <4.0.0"
+  flutter: "3.29.2"
 
 dependencies:
   flutter:
@@ -28,7 +28,7 @@ dependencies:
   image_cropper: ^9.0.0
   app_settings: ^6.1.1
   fluttertoast: ^8.2.12
-
+  pro_image_editor: ^9.4.1
 
 dev_dependencies:
   flutter_test:

@@ -17,10 +17,10 @@ class ImageEditor extends StatelessWidget {
     final orgImg = imgLoader.image;
 
     if (orgImg != null) {
-      final image = img.copyResize(imgLoader.image!,
-          width: epd.width, height: epd.height);
+      final resizedImage =
+          img.copyResize(orgImg, width: epd.width, height: epd.height);
       for (final method in epd.processingMethods) {
-        processedImgs.add(method(image));
+        processedImgs.add(method(resizedImage));
       }
     }
 
@@ -28,13 +28,19 @@ class ImageEditor extends StatelessWidget {
       imgList: processedImgs,
       epd: epd,
     );
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit Image'),
         actions: <Widget>[
           TextButton(
-            onPressed: () {
-              imgLoader.pickImage(width: epd.width, height: epd.height);
+            onPressed: () async {
+              await context
+                  .read<ImageLoader>()
+                  .pickImage(width: epd.width, height: epd.height);
+              if (context.mounted) {
+                await context.read<ImageLoader>().startImageEditing(context);
+              }
             },
             child: const Text("Import Image"),
           ),
