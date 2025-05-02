@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magic_epaper_app/pro_image_editor/features/movable_background_image.dart';
 import 'package:magic_epaper_app/provider/image_loader.dart';
 import 'package:magic_epaper_app/provider/display_provider.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Magic Epaper',
-      home: DisplaySelectionScreen(),
+      home: MovableBackgroundImageExample(),
     );
   }
 }
